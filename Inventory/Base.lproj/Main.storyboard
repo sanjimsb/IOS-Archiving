@@ -157,10 +157,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="SKUField" destination="QCj-sC-xvb" id="vlJ-GA-lzN"/>
-                        <outlet property="dateField" destination="ulW-kB-M9d" id="CK0-62-CWt"/>
-                        <outlet property="descField" destination="fuE-OS-dka" id="k7S-1Z-We6"/>
-                        <outlet property="nameField" destination="y5N-Wj-QLV" id="8bb-t9-50f"/>
+                        <outlet property="SKUField" destination="QCj-sC-xvb" id="jP3-tV-2Jo"/>
+                        <outlet property="dateField" destination="ulW-kB-M9d" id="1EE-aL-ZC0"/>
+                        <outlet property="descField" destination="fuE-OS-dka" id="hjl-sn-GVO"/>
+                        <outlet property="nameField" destination="y5N-Wj-QLV" id="Ple-VS-Bjc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zrx-vv-9Ho" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -185,7 +185,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="EgG-wq-CJI"/>
+        <segue reference="eR3-nL-Jmq"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">

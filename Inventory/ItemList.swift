@@ -11,15 +11,19 @@ class ItemList{
     var items = [Item]()
     
     func addItem(item: Item){
-        // complete code
+        print("test2")
+        items.append(item)
+        print(items)
     }
     
-    func deleteItem(row: Int){
-        // complete code
+    func deleteItem(indexPath: IndexPath){
+        items.remove(at: indexPath.row)
     }
     
-    func moveItem(from: Int, to: Int){
-        // complete code
+    func moveItem(fromIndexPath: IndexPath, toIndexPath: IndexPath){
+        let temp = items[fromIndexPath.row]
+        deleteItem(indexPath: fromIndexPath)
+        items.insert(temp, at: toIndexPath.row)
     }
     
 }
