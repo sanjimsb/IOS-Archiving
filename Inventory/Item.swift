@@ -7,16 +7,16 @@
 
 import Foundation
 
-class Item: Codable {
+class Item: Encodable, Decodable{
     var name: String?
     var SKU: String?
-    var description: String?
+    var desc: String?
     var dateAdded: Date?
-    
-    init(name: String, SKU: String, description: String, dateAdded: Date){
+
+    init(name: String, SKU: String, desc: String, dateAdded: Date){
         self.name = name
         self.SKU = SKU
-        self.description = description
+        self.desc = desc
         self.dateAdded = dateAdded
     }
 }

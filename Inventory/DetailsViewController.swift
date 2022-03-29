@@ -28,8 +28,8 @@ class DetailsViewController: UIViewController {
         guard let getSKU = SKUField.text else { return }
         guard let getDesc = descField.text else { return }
         let getDate = dateField.date
-
-        let updateModel = Item(name: getName, SKU: getSKU, description: getDesc, dateAdded: getDate)
+        
+        let updateModel = Item(name: getName, SKU: getSKU, desc: getDesc, dateAdded: getDate)
         itemList.addItem(item: updateModel)
     }
     

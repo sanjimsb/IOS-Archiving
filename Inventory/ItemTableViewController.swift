@@ -9,17 +9,32 @@ import UIKit
 
 class ItemTableViewController: UITableViewController {
 
-    let itemList: ItemList = ItemList()
-    
+    var itemList: ItemList = ItemList()
+    var userDefaults = UserDefaults()
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+       
+        if let getSavedItems = UserDefaults.standard.data(forKey: "items") {
+            print(getSavedItems)
+            do {
+                // Create JSON Decoder
+                let decoder = JSONDecoder()
+                let decodedItems = try decoder.decode([Item].self, from: getSavedItems)
+                for i in decodedItems {
+                    itemList.addItem(item: i)
+                }
+            } catch {
+                print("Unable to Decode Items (\(error))")
+            }
+        }
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-         self.navigationItem.leftBarButtonItem = self.editButtonItem
+        self.navigationItem.leftBarButtonItem = self.editButtonItem
     }
     
     override func viewWillAppear(_ animated: Bool) {
