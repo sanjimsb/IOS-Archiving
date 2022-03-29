@@ -11,6 +11,7 @@ class ItemTableViewController: UITableViewController {
 
     var itemList: ItemList = ItemList()
     var userDefaults = UserDefaults()
+    var tableCell: Int?
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -91,7 +92,6 @@ class ItemTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
         itemList.moveItem(fromIndexPath: fromIndexPath, toIndexPath: to)
     }
-    
 
     /*
     // Override to support conditional rearranging of the table view.
@@ -107,8 +107,13 @@ class ItemTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        self.tableCell = nil
+        if let indexPath = self.tableView.indexPathForSelectedRow {
+                self.tableCell = indexPath.row
+        }
         let dst = segue.destination as! DetailsViewController
         dst.itemList = self.itemList
+        dst.currentCell = self.tableCell
     }
 
 }

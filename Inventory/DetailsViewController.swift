@@ -10,6 +10,7 @@ import UIKit
 class DetailsViewController: UIViewController {
 
     var itemList : ItemList = ItemList()
+    var currentCell : Int?
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var SKUField: UITextField!
     @IBOutlet weak var descField: UITextField!
@@ -18,6 +19,11 @@ class DetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        guard let getRow = currentCell else { return }
+        nameField.text = itemList.items[getRow].name
+        SKUField.text = itemList.items[getRow].SKU
+        descField.text = itemList.items[getRow].desc
+//        dateField.date = itemList.items[getRow].dateAdded
         // Do any additional setup after loading the view.
         
     }
