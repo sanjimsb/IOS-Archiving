@@ -20,14 +20,17 @@ class DetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let getRow = currentCell else { return }
+        
+        // updating the text fields and date fields based on the stored list
         nameField.text = itemList.items[getRow].name
         SKUField.text = itemList.items[getRow].SKU
         descField.text = itemList.items[getRow].desc
-//        dateField.date = itemList.items[getRow].dateAdded
-        // Do any additional setup after loading the view.
+        print(itemList.items[getRow].dateAdded!)
+        dateField.setDate(itemList.items[getRow].dateAdded!, animated: true)
         
     }
     
+    // Triggers when save button is clicked, calls the method name addItem
     @IBAction func save(_ sender: Any) {
         
         guard let getName = nameField.text else { return }

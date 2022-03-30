@@ -13,6 +13,7 @@ class Item: Encodable, Decodable{
     var desc: String?
     var dateAdded: Date?
 
+    // initializes the variables
     init(name: String, SKU: String, desc: String, dateAdded: Date){
         self.name = name
         self.SKU = SKU

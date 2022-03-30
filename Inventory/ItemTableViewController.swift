@@ -17,8 +17,8 @@ class ItemTableViewController: UITableViewController {
         tableView.delegate = self
         tableView.dataSource = self
        
+        // check if there is store data in the userdefaults
         if let getSavedItems = UserDefaults.standard.data(forKey: "items") {
-            print(getSavedItems)
             do {
                 // Create JSON Decoder
                 let decoder = JSONDecoder()
@@ -107,6 +107,8 @@ class ItemTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        
+        // sends the indexPath and itemList to the DetailsViewController
         self.tableCell = nil
         if let indexPath = self.tableView.indexPathForSelectedRow {
                 self.tableCell = indexPath.row
